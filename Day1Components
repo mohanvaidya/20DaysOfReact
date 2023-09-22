@@ -1,3 +1,4 @@
+//class component
 import React, { Component } from 'react'
 
  class Hello extends Component {
@@ -8,4 +9,17 @@ import React, { Component } from 'react'
   }
 }
 
+//Functional componet 
+import React from "react";
+
+function Hello (){
+    return(
+    <div><h1>Welcome learner</h1>
+    </div>
+    );
+}
+
 export default Hello;
+
+
+//To run import file in your app.js also create function and class component in different file
