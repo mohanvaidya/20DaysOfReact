@@ -1,0 +1,35 @@
+// this is the propclass code 
+import React, { Component } from 'react'
+
+ class ClassComp extends Component {
+
+  render() {
+
+
+    return (
+      <div>
+        <h1>Hello {this.props.name} from {this.props.palce}, welcome to my Repo</h1>
+
+      </div>
+    )
+  }
+}
+
+export default ClassComp
+
+// this is app.js code
+
+import ClassComp from './components/ClassComp';
+function App() {
+  return (
+    <div>
+
+  <Counter></Counter>
+  <ClassComp name='mohan'palce='Pune'></ClassComp>
+  <ClassComp name='sahadev'palce='Pune'></ClassComp>
+
+    </div>
+  );
+}
+
+export default App;
