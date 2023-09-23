@@ -17,6 +17,17 @@ import React, { Component } from 'react'
 
 export default ClassComp
 
+//this is functional component
+import React from "react";
+
+function FunctionaComp (props) {
+ 
+    return(
+             <h1>hello {props.name} from {props.palce},welcome to my Repo</h1>
+    )
+}
+export default FunctionaComp;
+
 // this is app.js code
 
 import ClassComp from './components/ClassComp';
@@ -27,6 +38,7 @@ function App() {
   <Counter></Counter>
   <ClassComp name='mohan'palce='Pune'></ClassComp>
   <ClassComp name='sahadev'palce='Pune'></ClassComp>
+ <FunctionaComp name='sahadev'palce='Pune'></FunctionaComp>
 
     </div>
   );
