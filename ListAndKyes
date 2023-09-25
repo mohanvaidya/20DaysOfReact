@@ -1,0 +1,21 @@
+// this is a basic idea about list in react and keys
+
+import React from "react";
+
+
+const numbers=[1,2,3,4,5];
+
+const double=numbers.map((number => number*2));
+
+
+function ListAndKeys(){
+
+    return(
+    <h1><ul>{double}</ul></h1>
+
+
+    )
+
+
+}
+export default ListAndKeys;
