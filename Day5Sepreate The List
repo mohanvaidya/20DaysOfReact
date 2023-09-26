@@ -1,0 +1,29 @@
+// this will give you a idea hoe ti split the list. noe i have used here a filter 
+//but you can solve it using diferent function
+
+import React from "react";
+import { people } from "../data/data";
+
+function ListofChemist(){
+   const chemists=people.filter(person=>person.profession==='chemist');
+
+   const Other=people.filter(person=>person.profession!=='chemist');
+   const OtherPeople=Other.map(person=><li key={person.id}>
+    <p>
+    <b>{person.name}:</b>{" "+person.profession}</p>
+   </li>)
+
+   const listItems=chemists.map(person=>
+
+   <li key={person.id}>
+    <p>
+    <b>{person.name}:</b>{" "+person.profession}</p>
+   </li>)
+
+
+      return <article><h2>Scientists</h2>
+      <ul>{listItems}</ul>
+      <h2>Other Scientists</h2>
+             <ul>{OtherPeople}</ul></article>
+}
+    export default ListofChemist;
