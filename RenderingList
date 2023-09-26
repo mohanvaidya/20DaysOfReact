@@ -1,0 +1,19 @@
+// here is a example how you can render a list and also filter it using the given attributes
+//i have used here a funtional component here but you can use it direct in App.js
+//functional compoment
+
+
+import React from "react";
+import { people } from "../data/data";
+
+function ListofChemist(){
+   const chemists=people.filter(person=>person.profession==='chemist');
+   const listItems=chemists.map(person=><li><p>
+    <b>{person.name}:</b>{" "+person.profession}</p>
+   </li>)
+      return <ul>{listItems}</ul>;
+}
+export default ListofChemist;
+
+
+
