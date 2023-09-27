@@ -1,0 +1,45 @@
+Creating a React component called 
+ShoppingList that receives an array of 
+ shopping items as a prop and renders an 
+ordered list (<ol>) with each item as a list item 
+<li>
+
+import React from 'react';
+
+const ShoppingList = ({ items }) => {
+  return (
+    <div>
+      <h2>Shopping List</h2>
+      <ol>
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ol>
+    </div>
+  );
+};
+
+export default ShoppingList;
+
+
+
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ShoppingList from './ShoppingList';
+
+const App = () => {
+  const shoppingItems = ['Apples', 'Bananas', 'Chocolates', 'Milk'];
+
+  return (
+    <div>
+      <h1>My Shopping List</h1>
+      <ShoppingList items={shoppingItems} />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+
