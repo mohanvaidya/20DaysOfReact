@@ -1,0 +1,46 @@
+
+import React from 'react';
+
+const CommentList = ({ comments }) => {
+  return (
+    <div>
+      <h2>Comments</h2>
+      <ul>
+        {comments.map(comment => (
+          <li key={comment.id}>
+            <strong>{comment.user}</strong>: {comment.text}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+
+export default CommentList;
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import CommentList from './CommentList';
+
+const App = () => {
+  const comments = [
+    { id: 1, user: 'John Doe', text: 'This is the first comment.' },
+    { id: 2, user: 'Jane Smith', text: 'Another comment here.' },
+    { id: 3, user: 'Bob Johnson', text: 'And one more for good measure.' }
+  ];
+
+  return (
+    <div>
+      <h1>My Comment Section</h1>
+      <CommentList comments={comments} />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+
+
+
