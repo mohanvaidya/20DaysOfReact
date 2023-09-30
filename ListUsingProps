@@ -1,0 +1,39 @@
+// this will give you idea for rendering a list using  props 
+// first creat a chid component using functional component 
+
+import React from 'react';
+
+const ListComponent = (props) => {
+  const listData = props.data;
+
+  return (
+    <div>
+      <ul>
+        {listData.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default ListComponent;
+
+// then create a parent component and use the child component in it
+
+import React from 'react';
+import ListComponent from './ListComponent';
+
+const App = () => {
+  const listData = ['Item 1', 'Item 2', 'Item 3'];
+
+  return (
+    <div>
+      <h1>List Component Example</h1>
+      <ListComponent data={listData} />
+    </div>
+  );
+}
+
+export default App;
+
