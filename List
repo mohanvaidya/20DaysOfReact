@@ -1,0 +1,52 @@
+// to reder the list using functional components in react you can follo these steps 
+
+import React from 'react';
+
+const ListComponent = () => {
+  return (
+    <div>
+      {/* List items will go here */}
+    </div>
+  );
+}
+
+export default ListComponent;
+
+
+// define an array that contains a data of the rendering list  whatever the items are
+
+
+ ]const listData = [
+  'Item 1',
+  'Item 2',
+  'Item 3'
+];
+
+// use map and give the key function to the rendering function 
+
+  import React from 'react';
+
+const ListComponent = () => {
+  const listData = [
+    'Item 1',
+    'Item 2',
+    'Item 3'
+  ];
+
+  return (
+    <div>
+      <ul>
+        {listData.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default ListComponent;
+
+
+
+
+
