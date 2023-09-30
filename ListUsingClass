@@ -1,0 +1,59 @@
+// rendering the list using the clss component 
+// define the data list in the child component
+// create a data list which is to be render 
+class ListComponent extends Component {
+  listData = [
+    'Item 1',
+    'Item 2',
+    'Item 3'
+  ];
+
+  render() {
+    return (
+      <div>
+        {/* List items will go here */}
+      </div>
+    );
+  }
+}
+
+// use the list in the render method, use the .map method to iterate over the list and render each item in the list 
+class ListComponent extends Component {
+  listData = [
+    'Item 1',
+    'Item 2',
+    'Item 3'
+  ];
+
+  render() {
+    return (
+      <div>
+        <ul>
+          {this.listData.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+// now import the  class component in the app.js file of yours and define it 
+
+import React, { Component } from 'react';
+import ListComponent from './ListComponent';
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <h1>List Component Example</h1>
+        <ListComponent />
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
