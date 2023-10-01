@@ -1,0 +1,28 @@
+import React from 'react';
+
+class TodoList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: [
+        { id: 1, text: 'Learn React' },
+        { id: 2, text: 'Build a React App' },
+        { id: 3, text: 'Master JavaScript' }
+      ]
+    };
+  }
+
+  render() {
+    const todoItems = this.state.todos.map(todo => (
+      <li key={todo.id}>{todo.text}</li>
+    ));
+
+    return (
+      <ul>
+        {todoItems}
+      </ul>
+    );
+  }
+}
+
+export default TodoList;
