@@ -37,4 +37,33 @@ function Example() {
   );
 }
 
-// 
+// context hooks
+// Create a context
+const ThemeContext = createContext("light");
+
+// Create a provider for the context
+const ThemeProvider = ({ children }) => {
+  const [mode, setMode] = useState("light");
+
+  return (
+    <ThemeContext.Provider value={mode, setMode}>{children}</ThemeContext.Provider>
+  );
+};
+
+// Create a consumer for the context
+const useTheme = () => {
+  return useContext(ThemeContext);
+};
+
+// Use the context in a component
+const App = () => {
+  const { mode, setMode } = useTheme();
+
+  return (
+    <ThemeProvider>
+      <h1>The current mode is {mode}</h1>
+      <button onClick={() => setMode("dark")}>Set mode to dark</button>
+      <button onClick={() => setMode("light")}>Set mode to light</button>
+    </ThemeProvider>
+  );
+};
